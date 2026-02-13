@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <!-- ===== ヘッダーここから ===== -->
+    <header class="header">
+          <!-- 今月表示 -->
+          <span id="header-month"></span>
+       
+        <!-- 右上ボタン -->
+        <div class="header-button">
+            <!-- 今日に戻る -->
+            <label class="go-today" id="go-today">↩️</label>
+            <!-- 月移動 -->
+            <label id="open-picker" class="dropdown-btn">
+                <input type="month" id="month-picker">
+            </label>
+            <!-- 予定を検索 -->
+            <label class="search">🔎</label>
+        </div>
+    </header>
+    <!-- ===== ヘッダーここまで ===== -->
+   
+    <!-- ===== メインコンテンツここから ===== -->
+    <main class="main-content">
+        <!-- スクロール指定 -->
+        <div id="calendar-scroll" class="calendar-scroll"></div>
+       
+        <!-- カレンダー -->
+        <div class="calendar" id="calendar"></div>
+       
+        <!-- 下部選択日付 -->
+        <section class="detail">
+            <!-- 祝日 -->
+            <div class="holiday"></div>
+            <!--  -->
+            <h2 id="detailDate"></h2>
+           
+            <!-- 予定追加 -->
+            <button class="add-btn">+新しい予定</button>
+        </section>
+    </main>
+    <!-- ===== メインコンテンツここまで ===== -->
+   
+    <!-- ===== ボトムメニューここから ===== -->
+    <div class="bottom-menu">
+        <button>🏠<br>home</button>
+        <button>🗓<br>calendar</button>
+        <button>💰<br>money</button>
+        <button>⚙️<br>setting</button>
+    </div>
+    <!-- ===== ボトムメニューここまで ===== -->
+   
+    <script src="script.js"></script>
+</body>
+</html>
