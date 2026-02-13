@@ -19,7 +19,7 @@ body {
 /* 今月表示 */
 #header-month {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 /* 右上ボタン */
