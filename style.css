@@ -153,12 +153,12 @@ main-content {
 
 /* 下部 */
 .detail {
-    padding: 1rem;
+    padding: 0.25rem;
 }
 
 /* 下部日付 */
 .detail h2 {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     margin: 0 0 1rem;
 }
 
