@@ -85,12 +85,6 @@ input[type="month"] {
     cursor: pointer;
 }
 
-.main-content {
-    height: calc(100vh - 3rem - 1rem);
-    display: flex;
-    flex-direction: column;
-}
-
 .calendar-scroll {
     flex: 1;
     overflow-x: scroll;
