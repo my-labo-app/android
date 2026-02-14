@@ -1,28 +1,38 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // スクロール
     const scrollContainer = document.getElementById("calendar-scroll");
+    // ヘッダー年月
     const headerMonth = document.getElementById("header-month");
+    // 日付ピッカー
     const picker = document.getElementById("month-picker");
+    // 選択した日付
     const detailDate = document.getElementById("detailDate");
+    // 今日に戻る
     const goTodayBtn = document.getElementById("go-today");
+    // 日付ピッカーを開く
     const openPickerBtn = document.getElementById("open-picker");
 
+    // 読み込み
     const today = new Date();
     const START_YEAR = 2025;
     const END_YEAR = 2040;
 
+    // ヘッダー月
     const monthNames = [
         "January","February","March","April","May","June",
         "July","August","September","October","November","December"
     ];
-
+    
+    // ディティール六曜
     const rokuyo = ["大安","赤口","先勝","友引","先負","仏滅"];
 
+    // ヘッダー
     function updateHeader(year, month) {
     headerMonth.querySelector(".year").textContent = year;
     headerMonth.querySelector(".month").textContent = monthNames[month];
 }
-
+    // 曜日
     function updateDetail(year, month, day) {
         const date = new Date(year, month, day);
         const weekDays = ["日","月","火","水","木","金","土"];
@@ -31,12 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
             `${year}年${month + 1}月${day}日(${weekDays[date.getDay()]}) ${r}`;
     }
 
+    // カレンダー
     function renderCalendar(year, month) {
         const container = document.createElement("div");
         container.className = "calendar-container";
         container.dataset.year = year;
         container.dataset.month = month + 1;
 
+        // 曜日
         const weekdays = document.createElement("div");
         weekdays.className = "weekdays";
 
@@ -52,11 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const cal = document.createElement("div");
         cal.className = "calendar";
 
+        // 読み込み
         const firstDay = new Date(year, month, 1).getDay();
         const startIndex = (firstDay + 6) % 7;
         const lastDate = new Date(year, month + 1, 0).getDate();
         const prevLastDate = new Date(year, month, 0).getDate();
 
+        // 1ヶ月42マス
         const totalCells = 42;
 
         for (let i = 0; i < totalCells; i++) {
