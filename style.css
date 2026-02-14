@@ -87,8 +87,12 @@ main-content {
     flex: 1;
     overflow-x: scroll;
     overflow-y: hidden;
-    scrollbar-width: none;
 }
+
+.calendar-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 
 /* 曜日 */
 .weekdays {
