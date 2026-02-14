@@ -85,7 +85,7 @@ input[type="month"] {
     cursor: pointer;
 }
 
-main-content {
+.main-content {
     height: calc(100vh - 3rem - 1rem);
     display: flex;
     flex-direction: column;
