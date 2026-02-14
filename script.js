@@ -19,8 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const rokuyo = ["大安","赤口","先勝","友引","先負","仏滅"];
 
     function updateHeader(year, month) {
-        headerMonth.textContent = `${year} ${monthNames[month]}`;
-    }
+    headerMonth.querySelector(".year").textContent = year;
+    headerMonth.querySelector(".month").textContent = monthNames[month];
+}
 
     function updateDetail(year, month, day) {
         const date = new Date(year, month, day);
