@@ -79,20 +79,54 @@ document.addEventListener("DOMContentLoaded", () => {
             div.className = "day";
 
             const dateNum = i - startIndex + 1;
-           
+
+            // ===== 前月 =====
             if (dateNum <= 0) {
-               
-                div.textContent = prevLastDate + dateNum;
+
+                const prevDate = prevLastDate + dateNum;
+                div.textContent = prevDate;
                 div.classList.add("other-month");
-               
+
+                div.addEventListener("click", () => {
+                    container.querySelectorAll(".day")
+                        .forEach(el => el.classList.remove("selected"));
+
+                    div.classList.add("selected");
+
+                    const targetMonth = month - 1;
+                    const targetYear = targetMonth < 0 ? year - 1 : year;
+                    const realMonth = (targetMonth + 12) % 12;
+
+                    updateDetail(targetYear, realMonth, prevDate);
+                    updateHeader(targetYear, realMonth);
+                });
+
+            // ===== 次月 =====
             } else if (dateNum > lastDate) {
-               
-                div.textContent = dateNum - lastDate;
+
+                const nextDate = dateNum - lastDate;
+                div.textContent = nextDate;
                 div.classList.add("other-month");
+
+                div.addEventListener("click", () => {
+                    container.querySelectorAll(".day")
+                        .forEach(el => el.classList.remove("selected"));
+
+                    div.classList.add("selected");
+
+                    const targetMonth = month + 1;
+                    const targetYear = targetMonth > 11 ? year + 1 : year;
+                    const realMonth = targetMonth % 12;
+
+                    updateDetail(targetYear, realMonth, nextDate);
+                    updateHeader(targetYear, realMonth);
+                });
+
+            // ===== 今月 =====
             } else {
-               
+
                 div.textContent = dateNum;
-               
+
                 if (
                     dateNum === today.getDate() &&
                     year === today.getFullYear() &&
@@ -102,16 +136,17 @@ document.addEventListener("DOMContentLoaded", () => {
                     updateDetail(year, month, dateNum);
                     updateHeader(year, month);
                 }
-               
+
                 div.addEventListener("click", () => {
                     container.querySelectorAll(".day")
                         .forEach(el => el.classList.remove("selected"));
+
                     div.classList.add("selected");
                     updateDetail(year, month, dateNum);
                     updateHeader(year, month);
                 });
             }
-           
+
             cal.appendChild(div);
         }
 
