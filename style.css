@@ -18,10 +18,19 @@ body {
 
 /* 今月表示 */
 #header-month {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+#header-month .year {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#header-month .month {
     font-size: 2rem;
-    font-weight: 600;
-    position: relative;
-    bottom: 0.3rem;
+    font-weight: 700;
 }
 
 /* 右上ボタン */
