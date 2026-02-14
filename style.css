@@ -62,21 +62,15 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #555555;
-    outline: none;
-    overflow: hidden;
 }
 
 .dropdown-btn::before {
     content: "🗓";
     position: absolute;
-    width: 2.5rem;
-    height: 2.5rem;
-    top: 50%;
-    height: 50%;
-    left: 70%;
-    cursor: pointer;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 input[type="month"] {
