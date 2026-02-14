@@ -189,6 +189,7 @@ main-content {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .bottom-menu button {
