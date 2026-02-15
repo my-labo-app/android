@@ -162,18 +162,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const initialIndex = (today.getFullYear() - START_YEAR) * 12 + today.getMonth();
    
+    const containerWidth = scrollContainer.clientWidth;
+
     scrollContainer.scrollTo({
-        left: window.innerWidth * initialIndex
+        left: containerWidth * initialIndex
     });
 
     if (goTodayBtn) {
         goTodayBtn.addEventListener("click", () => {
             const index =
                 (today.getFullYear() - START_YEAR) * 12 + today.getMonth();
-            scrollContainer.scrollTo({
-                left: window.innerWidth * index,
-                behavior: "smooth"
-            });
+            const containerWidth = scrollContainer.clientWidth;
+
+             scrollContainer.scrollTo({
+                 left: containerWidth * index,
+                 behavior: "smooth"
+             });
 
             updateHeader(today.getFullYear(), today.getMonth());
         });
@@ -198,7 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     scrollContainer.addEventListener("scroll", () => {
-        const index = Math.round(scrollContainer.scrollLeft / window.innerWidth);
+        const containerWidth = scrollContainer.clientWidth;
+        const index = Math.round(scrollContainer.scrollLeft / containerWidth);
        
         const year = START_YEAR + Math.floor(index / 12);
         const month = index % 12;
