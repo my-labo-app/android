@@ -40,7 +40,7 @@ body {
     gap: 0.5rem;
 }
 
-.header-button label {
+.header-button button {
     display: flex;
     align-items: center;
     justify-content: center;
