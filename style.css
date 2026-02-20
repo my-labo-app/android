@@ -65,8 +65,8 @@ body {
     width: 2.5rem;
     height: 2.5rem;
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
@@ -84,6 +84,7 @@ input[type="month"] {
     position: absolute;
     inset: 0;
     cursor: pointer;
+    align-items: flex-end;
 }
 
 .calendar-scroll {
