@@ -65,8 +65,8 @@ body {
     width: 2.5rem;
     height: 2.5rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: flex-end;
     overflow: hidden;
 }
 
